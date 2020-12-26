@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Spotify Rewind</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/artists_and_tracks.css">
+    <link rel="stylesheet" href="/css/time_range.css">
+
+    <!-- sidenav -->
+    <link rel="stylesheet" href="/css/nav.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+
+  <body>
+    <script src="/services/redirectIfUnauth.js"></script>
+
+    <span id="nav-placeholder"></span>
+    <script>
+      $(function(){
+        $("#nav-placeholder").load("nav.html");
+      });
+    </script>
+
+    <script type="text/javascript">
+      var existCondition = setInterval(function() {
+       if ($('#sidenav-songs').length) {
+          clearInterval(existCondition);
+          $('#sidenav-songs').addClass("active-sidenav");
+       }
+     }, 30);
+    </script>
+
+    <div class="not-sidenav">
+      <div class="feed">
+        <div class="banner">
+          <img class="bannerimage" src="../assets/headphones.jpg" alt="banner">
+          <span class="hero-text">Top Songs</span>
+        </div>
+        <div id="time_range_placeholder"></div>
+
+        <script>
+          $(function(){
+            $("#time_range_placeholder").load("time_range.html");
+          });
+        </script>
+
+        <div id="main"></div> <!-- templated with apiReq.js -->
+      </div>
+    </div>
+
+    <script id="main-template" type="text/x-handlebars-template">
+      <section class="content">
+        {{#items}}
+        <div class="row-container">
+          <a class="track" href={{uri}}>
+            <span class="ranking">{{ranking}}</span>
+            <span class="album-image-container">
+              <img class="album-image" src={{album.images.0.url}} alt={{name}}>
+            </span>
+            <span class="track-text">
+              <p class="track-name">{{name}}</p>
+              <p class="track-artist">{{album.artists.0.name}}</p> <!-- only primary artist -->
+            </span>
+          </a>
+        </div>
+        {{/items}}
+      </section>
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="services/apiReq.js">
+      // This provides the function spotifyRequest().
+    </script>
+    <script type="text/javascript">
+    // Upon loading, show all time top 50 tracks.
+      spotifyRequest('tracks', 'long_term', 50, 0);
+    </script>
+  </body>
+</html>

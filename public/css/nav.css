@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+ background-color: #f8f8f8;
+
+ margin: 0;
+ height: 100%;
+}
+
+.sidenav {
+  font-family: 'Montserrat', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+  height: 100%;
+
+  width: 9vw;
+
+  background: #ffffff;
+  /*padding: 30px 0px;*/
+  position: fixed;
+
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+
+  display: inline-block;
+}
+
+.sidenav h2 {
+  color: #625973;
+  text-transform: uppercase;
+  text-align: center;
+  /*margin-bottom: 30px;*/
+}
+
+/* The navigation menu links */
+.sidenav a {
+  height: 9vw;
+
+  /*padding: 6px 6px 6px 6px;*/
+  display: block;
+
+  -webkit-transition: color 0.2s;
+  -moz-transition:    color 0.2s;
+  -ms-transition:     color 0.2s;
+  -o-transition:      color 0.2s;
+  transition:         color 0.2s;
+  -webkit-transition: background 0.2s;
+  -moz-transition:    background 0.2s;
+  -ms-transition:     background 0.2s;
+  -o-transition:      background 0.2s;
+  transition:         background 0.2s;
+}
+
+.sidenav a:hover {
+  background: #9c89b8;
+  color: #ffffff;
+}
+
+.sidenav-element {
+  text-align: center;
+  font-size: 3.0vh;
+  text-decoration: none;
+  color: #9c89b8;
+}
+
+.sidenav-element i {
+  font-size: 5.0vh;
+}
+
+.active-sidenav {
+  /*background: #9D6D94;*/
+  background: #9c89b8;
+  color: #ffffff;
+}
+
+.active-sidenav:hover {}
+
+.vertical-alignment {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

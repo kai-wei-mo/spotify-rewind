@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  font-family: 'Montserrat', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.no-scroll {
+  margin: 0;
+  padding: 0;
+
+  margin-left: 9vw;
+  padding: 4vw 4vw 4vw 4vw;
+  height: 100%;
+}
+
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 500px;
+}
+
+#user-profile {
+  display: flex;
+}
+
+.left {
+  width: 210px;
+}
+
+.profile-pic {
+  width: inherit;
+}
+
+.link {
+  font-size: 1.5em;
+  color: #696969;
+  margin-left: 10px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.display_name {
+  font-size: 2em;
+  color: #2196f3;
+  font-weight: bold;
+}
+
+.about-head {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #555555;
+  font-weight: 400;
+  font-size: 1.25em;
+}
+
+.refresh {
+  background: none!important;
+  border: none;
+
+  margin-left: 5px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.about-table {
+   border-collapse: separate;
+   border-spacing: 0px 12px;
+}
+
+.td-left {
+  padding: 0 36px 0 0;
+  margin: 0;
+  color: #2196f3;
+}
+
+.country-flag {
+  padding: 0;
+  margin: 0;
+}
+
+.right {
+  flex: 1;
+
+  margin-left: 3vw;
+}
+
+#recents {
+  overflow-y: scroll;
+  position: relative;
+  bottom: 0;
+  height: 400px;
+}
+
+.beta {
+  background: #f59b23;
+  border-radius: 3px;
+  margin-left: 10px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 12px;
+  padding-left: 4px;
+  padding-right: 4px;
+  vertical-align: middle;
+}

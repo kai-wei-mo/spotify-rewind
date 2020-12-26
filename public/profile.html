@@ -1,0 +1,120 @@
+<!-- This page is the first page an authenticated user will see -->
+
+<!doctype html>
+<html translate="no">
+  <head>
+    <meta name="google" content="notranslate">
+    <title>Spotify Rewind</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/artists_and_tracks.css">
+
+    <!-- sidenav -->
+    <link rel="stylesheet" href="/css/nav.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+
+  <body>
+    <script src="/services/redirectIfUnauth.js"></script>
+
+    <div id="nav-placeholder"></div>
+    <script>
+      $(function(){
+        $("#nav-placeholder").load("nav.html");
+      });
+    </script>
+
+    <script type="text/javascript">
+      var existCondition = setInterval(function() {
+       if ($('#sidenav-profile').length) {
+          clearInterval(existCondition);
+          $('#sidenav-profile').addClass("active-sidenav");
+       }
+     }, 30);
+    </script>
+
+    <div class="no-scroll">
+      <div id="user-profile"></div> <!-- templated with profileReq.js -->
+    </div>
+
+    <script id="user-profile-template" type="text/x-handlebars-template">
+      <div class="left">
+        <img class="profile-pic" src="{{images.0.url}}" />
+        <div class="about">
+          <h2 class="about-head">ABOUT</h2>
+
+          <table class="about-table">
+            <tr>
+                <td class="td-left"><b>Subscription:</b></td>
+                <td style="text-transform:capitalize">{{product}}</td>
+            </tr>
+            <tr>
+                <td class="td-left"><b>Followers:</b></td>
+                <td>{{followers.total}}</td>
+            </tr>
+            <tr>
+                <td class="td-left"><b>Country:</b></td>
+                <td>{{country}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="not-referenced">
+          <span class="display_name">{{display_name}} (@{{id}})</span>
+          <a class="link" href="{{uri}}"><i class="fas fa-external-link-square-alt"></i></a>
+        </div>
+
+        <!--Note: Currently doesn’t support podcast episodes.
+        Returns the most recent 50 tracks played by a user.
+        Note that a track currently playing will not be visible in play history until it has completed.
+        A track must be played for more than 30 seconds to be included in play history.
+        Blocked by Private Session.
+        -->
+
+        <div class="recently-played">
+          <div class="about-head">
+            <span>RECENTLY PLAYED</span><span class="beta">BETA</span>
+            <button class="btn btn-default refresh" onclick="recentsRequest(20);">Refresh</button>
+          </div>
+          <div id="recents"></div> <!-- templated with recentsReq.js -->
+        </div>
+      </div>
+    </script>
+
+
+    <script id="recents-template" type="text/x-handlebars-template">
+      <section class="content">
+        {{#items}}
+        <div class="row-container">
+          <a class="track" href={{track.uri}}>
+            <span class="album-image-container">
+              <img class="album-image" src={{track.album.images.0.url}} alt={{track.name}}>
+            </span>
+            <span class="track-text">
+              <p class="track-name">{{track.name}}</p>
+              <p class="track-artist">{{track.artists.0.name}}</p> <!-- only primary artist -->
+            </span>
+            <p class="time">{{played_at}}</p>
+          </a>
+        </div>
+        {{/items}}
+      </section>
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="services/profileReq.js"></script>
+    <script src="services/recentsReq.js"></script>
+    <script type="text/javascript">
+      let recentsInterval = setInterval(function() {
+       if ($('#recents').length) {
+         clearInterval(recentsInterval);
+         recentsRequest(20);
+       }
+     }, 50);
+    </script>
+  </body>
+</html>

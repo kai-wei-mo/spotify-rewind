@@ -1,0 +1,44 @@
+<div id="time_range_selection">
+  <button class="time active"><span class="btn-text">All time</span></button>
+  <button class="time"><span class="btn-text">Last 6 months</span></button>
+  <button class="time"><span class="btn-text">Last month</span></button>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+<script src="services/apiReq.js">
+  // // This provides the function spotifyRequest().
+</script>
+
+<script type="text/javascript">
+  var btnContainer = document.getElementById("time_range_selection");
+  var btns = btnContainer.getElementsByClassName("time");
+
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      // Add the active class to the current button.
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+
+      // Refresh feed based on selection.
+      let theurl = window.location.pathname;
+      let type = 'zz';
+      if (theurl.includes('artist')) {
+        type = 'artists';
+      } else if (theurl.includes('song')) {
+        type = 'tracks';
+      }
+
+      let time_map = {
+        "All time": "long_term",
+        "Last 6 months": "medium_term",
+        "Last month": "short_term"
+      };
+      let time_range = time_map[this.textContent];
+
+      spotifyRequest(type, time_range, 50, 0);
+    });
+  }
+</script>
