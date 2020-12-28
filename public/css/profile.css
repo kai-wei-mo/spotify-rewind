@@ -69,14 +69,32 @@ a:active {
 }
 
 .refresh {
-  background: none!important;
+  background: #9c89b8;
   border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1.0em;
 
-  margin-left: 5px;
-  padding-top: 0;
-  padding-bottom: 0;
+  /*position: relative;
+  float: right;*/
+  padding-top: 1px;
+  padding-bottom: 1px;
   padding-left: 20px;
   padding-right: 20px;
+  border-radius: 20px;
+
+  margin-left: 8px;
+
+  -webkit-transition: background-color 160ms linear;
+  -moz-transition: background-color 160ms linear;
+  -o-transition: background-color 160ms linear;
+  -ms-transition: background-color 160ms linear;
+  transition: background-color 160ms linear;
+
+}
+
+.refresh:hover {
+  background: #59457a;
 }
 
 .about-table {
@@ -108,14 +126,6 @@ a:active {
   height: 400px;
 }
 
-.beta {
-  background: #f59b23;
-  border-radius: 3px;
-  margin-left: 10px;
-  font-weight: bold;
-  color: #fff;
-  font-size: 12px;
-  padding-left: 4px;
-  padding-right: 4px;
-  vertical-align: middle;
+.blank-recent {
+  height: 100px;
 }

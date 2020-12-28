@@ -11,6 +11,22 @@
     <link rel="stylesheet" href="/css/nav.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script src="services/createPlaylist.js"></script>
+    <script src="services/populatePlaylist.js"></script>
+
+    <script type="text/javascript">
+      let createAndPopulatePlaylist = () => {
+        createPlaylist();
+
+        var playlistExists = setInterval(function() {
+         if ((sessionStorage.getItem('playlist_id') != '-1')) {
+            clearInterval(playlistExists);
+            populatePlaylist();
+         }
+       }, 30);
+      }
+    </script>
   </head>
 
   <body>
@@ -32,6 +48,8 @@
      }, 30);
     </script>
 
+
+
     <div class="not-sidenav">
       <div class="feed">
         <div class="banner">
@@ -47,6 +65,14 @@
         </script>
 
         <div id="main"></div> <!-- templated with apiReq.js -->
+
+        <div class="notification">
+          <div class="notification-message">
+            <h4>Hey! Want to save these songs for later?</h4>
+            <p>We'll create a private playlist for you with these songs.</p>
+          </div>
+          <button class="save-button" onclick="createAndPopulatePlaylist();">Create Playlist</button>
+        </div>
       </div>
     </div>
 
@@ -66,6 +92,7 @@
           </a>
         </div>
         {{/items}}
+        <div class="row-container-blank"></div>
       </section>
     </script>
 
@@ -77,6 +104,12 @@
     <script type="text/javascript">
     // Upon loading, show all time top 50 tracks.
       spotifyRequest('tracks', 'long_term', 50, 0);
+    </script>
+
+    <script type="text/javascript">
+      setTimeout(function(){
+        $('.notification').css("bottom","0%");
+      }, 800);
     </script>
   </body>
 </html>

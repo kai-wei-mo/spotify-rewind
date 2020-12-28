@@ -100,7 +100,7 @@ function recentsRequest(limit) {
     }
 
     if (!isOverNDaysAgo(date, 6)) {
-      return `(${day_map[date.getDay()]}) ${format_two_digits(date.getHours())}:${format_two_digits(date.getMinutes())}`;
+      return `${day_map[date.getDay()]} ${format_two_digits(date.getHours())}:${format_two_digits(date.getMinutes())}`;
     }
 
     return `${date.getDay()} ${month_map[date.getMonth()]} ${format_two_digits(date.getHours())}:${format_two_digits(date.getMinutes())}`

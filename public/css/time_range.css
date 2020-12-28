@@ -18,13 +18,13 @@
 }
 
 .time:hover {
-  color: #5a4e6e;
+  color: #59457a;
 }
 
 .active {
-  color: #5a4e6e;
+  color: #59457a;
 }
 
 .active span {
-  border-bottom: 4px solid #5a4e6e;
+  border-bottom: 4px solid #59457a;
 }

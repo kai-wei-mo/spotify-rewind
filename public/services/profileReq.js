@@ -49,6 +49,7 @@
             'Authorization': 'Bearer ' + access_token
           },
           success: function(response) {
+          sessionStorage.setItem("user_id", response.id);
             userProfilePlaceholder.innerHTML = userProfileTemplate(response);
           },
           error: function() {
