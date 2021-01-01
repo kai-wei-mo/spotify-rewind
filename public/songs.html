@@ -25,6 +25,17 @@
             populatePlaylist();
          }
        }, 30);
+
+       document.getElementsByClassName('save-button')[0].innerHTML =
+       '<span class="saving">Saving<span>.</span><span>.</span><span>.</span></span>';
+
+       setTimeout(() => {
+         document.getElementsByClassName('save-button')[0].innerHTML = "Saved!";
+       }, 2000)
+
+       setTimeout(() => {
+         document.getElementsByClassName('save-button')[0].innerHTML = "Create Playlist";
+       }, 3800)
       }
     </script>
   </head>
@@ -47,8 +58,6 @@
        }
      }, 30);
     </script>
-
-
 
     <div class="not-sidenav">
       <div class="feed">

@@ -9,6 +9,7 @@
   margin-right: auto;
   width: 800px;
   background-color: #ffffff;
+  box-shadow: 0px 0px 8px 8px #f2f2f2;
 }
 
 .banner {
@@ -32,7 +33,7 @@
   font-family: 'Montserrat';
   font-weight: 800;
   color: #fff;
-  font-size: 54px;
+  font-size: 50px;
 }
 
 
@@ -107,8 +108,36 @@ a:active {
   transition: background-color 200ms linear;
 
   font-weight: bold;
+  width: 200px;
 }
 
 .save-button:hover {
   background: #59457a;
+}
+
+@keyframes blink {
+    0% {
+      opacity: .2;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: .2;
+    }
+}
+
+.saving span {
+    animation-name: blink;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
+.saving span:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.saving span:nth-child(3) {
+    animation-delay: .4s;
 }

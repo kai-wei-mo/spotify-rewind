@@ -34,7 +34,7 @@
 
 .link {
   font-size: 1.5em;
-  color: #696969;
+  color: #2196f3;
   margin-left: 10px;
 }
 
@@ -75,13 +75,11 @@ a:active {
   color: #fff;
   font-size: 1.0em;
 
-  /*position: relative;
-  float: right;*/
   padding-top: 1px;
   padding-bottom: 1px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
 
   margin-left: 8px;
 
@@ -98,8 +96,8 @@ a:active {
 }
 
 .about-table {
-   border-collapse: separate;
-   border-spacing: 0px 12px;
+  border-collapse: separate;
+  border-spacing: 0px 12px;
 }
 
 .td-left {
@@ -115,7 +113,6 @@ a:active {
 
 .right {
   flex: 1;
-
   margin-left: 3vw;
 }
 
