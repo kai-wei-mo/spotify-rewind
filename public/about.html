@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Spotify Rewind</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="/css/about.css">
 
     <!-- sidenav -->
@@ -22,12 +21,22 @@
       });
     </script>
 
+    <script type="text/javascript">
+      var existCondition = setInterval(function() {
+       if ($('#sidenav-about').length) {
+          clearInterval(existCondition);
+          $('#sidenav-about').addClass("active-sidenav");
+       }
+     }, 30);
+    </script>
+
+    <script src="/services/destroySession.js"></script>
+
     <div class="about-content">
       <h3>What is Spotify Rewind?</h3>
       <h4>Spotify Rewind is an application that allows users to see the
         songs and artists that they've listened to the most, across
         different periods of their listening journey.
-
       </h4>
 
       <h3>Privacy</h3>
@@ -36,20 +45,25 @@
       </h4>
 
       <h3>How do I switch accounts?</h3>
-      <h4>Go to accounts.spotify.com and press LOG OUT.</h4>
-      <h4>Then, open [xxx] and sign in with the desired account.</h4>
+      <h4>Go to
+        <a target="_blank" href='http://accounts.spotify.com'>accounts.spotify.com</a>
+        and press LOG OUT.
+      </h4>
+      <h4>Then,
+        <a onclick="destroySession();" target="_blank" href="/">click me</a>.
+      </h4>
 
 
       <div class="contact-list">
         <!--<h3 class="connect-with-me">Connect with me<br/></h3>-->
         <br /><br /><br />
-        <a class="contact github" href="https://github.com/devinkwmo">
+        <a class="contact github" target="_blank" href="https://github.com/devinkwmo">
           <i class="fab fa-github"></i>
         </a>
-        <a class="contact linkedin" href="https://www.linkedin.com/in/kai-wei-mo/">
+        <a class="contact linkedin" target="_blank" href="https://www.linkedin.com/in/kai-wei-mo/">
           <i class="fab fa-linkedin-in"></i>
         </a>
-        <a class="contact email" href="mailto:devinkwmo@gmail.com?subject=Spotify%20Rewind%20%5Byour%20subject%20here%5D">
+        <a class="contact email" target="_blank" href="mailto:devinkwmo@gmail.com?subject=Spotify%20Rewind%20%5Byour%20subject%20here%5D">
           <i class="fas fa-envelope"></i>
         </a>
       </div>

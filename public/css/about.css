@@ -26,6 +26,15 @@ h4 {
   color: #544d71;
 }
 
+a {
+  color: #2196f3;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #1976bf;
+}
+
 .contact-list {
   margin: 0px 0px;
   text-align: right;
@@ -42,14 +51,23 @@ h4 {
   padding: 0px;
   text-decoration: none;
   text-align: center;
-  color: #fff;
+  color: white;
   font-size: 25px;
   font-weight: normal;
   line-height: 2em;
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+  transition: 0.3s;
+}
 
+.contact:hover {
+  opacity: 0.9;
+  color: white;
+}
+
+.contact:visited {
+  color: white;
 }
 
 .github {
