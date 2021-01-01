@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Spotify Rewind</title>
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -14,16 +14,24 @@
         if (window.location.href.indexOf("access_token") > -1) {
           callbackReq();
           window.location.assign("/profile.html");
+        } else if (sessionStorage.getItem('access_token')) {
+          window.location.assign("/profile.html");
         }
       });
     </script>
 
-    <div class="hero-image">
-      <div class="hero-text">
-        <h1>Header</h1>
-        <p>Paragraph</p>
-        <a href="/login" class="btn btn-primary">Log in with Spotify</a>
+    <img class="wave" src="assets/wave-pale.png">
+  	<div class="container">
+  		<div class="img">
+  			<img src="assets/bg.svg">
+  		</div>
+  		<div class="login-content">
+        <!-- ... -->
+        <button class="btn" type="button" name="button">
+          <a href="/login">Log in with Spotify</a>
+        </button>
       </div>
     </div>
+
   </body>
 </html>
