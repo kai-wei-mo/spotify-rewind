@@ -41,7 +41,7 @@ function populatePlaylist() {
 					uris: uri_arr,
 				}),
 				success: function (response) {
-					sessionStorage.destroyItem('playlist_id');
+					sessionStorage.removeItem('playlist_id');
 				},
 				error: function () {
 					alert('An unexpected error has occured.');

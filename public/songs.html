@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Spotify Rewind</title>
+    <title>Spotify Rewind | Top Songs</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/artists_and_tracks.css">
     <link rel="stylesheet" href="/css/time_range.css">
@@ -20,7 +20,7 @@
         createPlaylist();
 
         var playlistExists = setInterval(function() {
-         if ((sessionStorage.getItem('playlist_id') != '-1')) {
+         if ((sessionStorage.getItem('playlist_id'))) {
             clearInterval(playlistExists);
             populatePlaylist();
          }
