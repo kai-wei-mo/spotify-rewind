@@ -1,37 +1,112 @@
-<!doctype html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="top artists, top songs, listening, trends, recent, history">
+    <meta name="description" content="Rediscover your top Spotify hits!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Spotify Rewind</title>
-    <link rel="stylesheet" href="/css/index.css">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="icon" href="https://cdn.onlinewebfonts.com/svg/img_515277.png">
+
   </head>
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="services/callbackReq.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        if (window.location.href.indexOf("access_token") > -1) {
-          callbackReq();
-          window.location.assign("/profile.html");
-        } else if (sessionStorage.getItem('access_token')) {
-          window.location.assign("/profile.html");
-        }
-      });
-    </script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          if (window.location.href.indexOf("access_token") > -1) {
+            callbackReq();
+            window.location.assign("/profile.html");
+          } else if (sessionStorage.getItem('access_token')) {
+            window.location.assign("/profile.html");
+          }
+        });
+      </script>
 
-    <img class="wave" src="assets/wave-pale.png">
-  	<div class="container">
-  		<div class="img">
-  			<img src="assets/bg.svg">
-  		</div>
-  		<div class="login-content">
-        <!-- ... -->
-        <button class="btn" type="button" name="button">
-          <a href="/login">Log in with Spotify</a>
-        </button>
-      </div>
-    </div>
+     <div class="logo">
+       <div class="wrapper">
+         <a href="/">
+           <img src="assets/logo2.png" alt="logo">
+         </a>
+       </div>
+     </div>
+
+    <section id="intro">
+        <div class="top-right-gradient"></div>
+        <div class="wrapper mobile-wrapper">
+          <div class="intro-left">
+            <p id="typewriter"></p>
+
+            <!-- https://usefulangle.com/post/75/typing-effect-animation-javascript-css -->
+            <script type="text/javascript">
+              var _CONTENT = [
+              "Who are my all-time favourite artists?",
+              "What were my top songs this month?",
+              "What have I been listening to recently?",
+              "What genres do I listen to the most?",
+              ];
+
+              var _PART = 0;
+              var _PART_INDEX = 0;
+              var _INTERVAL_VAL;
+
+              var _ELEMENT = document.querySelector("#typewriter");
+
+              function Type() {
+                var text =  _CONTENT[_PART].substring(0, _PART_INDEX + 1);
+                _ELEMENT.innerHTML = text;
+                _PART_INDEX++;
+
+                if(text === _CONTENT[_PART]) {
+                  clearInterval(_INTERVAL_VAL);
+                  setTimeout(function() {
+                    _INTERVAL_VAL = setInterval(Delete, 50);
+                  }, 1000);
+                }
+              }
+
+              function Delete() {
+                var text =  _CONTENT[_PART].substring(0, _PART_INDEX - 1);
+                _ELEMENT.innerHTML = text;
+                _PART_INDEX--;
+
+                if(text === '') {
+                  clearInterval(_INTERVAL_VAL);
+
+                  if(_PART == (_CONTENT.length - 1))
+                    _PART = 0;
+                  else
+                    _PART++;
+
+                  _PART_INDEX = 0;
+
+                  setTimeout(function() {
+                    _INTERVAL_VAL = setInterval(Type, 100);
+                  }, 200);
+                }
+              }
+
+              _INTERVAL_VAL = setInterval(Type, 100);
+            </script>
+            <h2 class="temp">
+              Revisit your favourite artists.
+            </h2>
+            <h2>
+              Rediscover your favourite songs.
+            </h2>
+            <a href="/login" class="intro-cta" >
+                Log in with Spotify
+            </a>
+          </div>
+
+          <div class="intro-right">
+              <img src="assets/undraw_listening_1u79.svg" alt="listening to music">
+          </div>
+        </div>
+    </section>
 
   </body>
 </html>

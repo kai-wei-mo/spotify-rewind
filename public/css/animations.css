@@ -1,4 +1,4 @@
-@keyframes fade-in {
+@keyframes FadeIn {
   0% {
     opacity: 0;
   }
@@ -7,7 +7,7 @@
   }
 }
 
-@keyframes scale-in {
+@keyframes ScaleIn {
   0% {
     transform: scale(0);
   }
@@ -16,7 +16,7 @@
   }
 }
 
-@keyframes scaleX-in {
+@keyframes ScaleXIn {
   0% {
     transform: scaleX(0);
   }
@@ -25,7 +25,7 @@
   }
 }
 
-@keyframes scale-to {
+@keyframes ScaleTo {
   0% {
     transform: scale(1.015) translate3d(0, 0, 0); }
   100% {
@@ -43,7 +43,7 @@
   }
 }
 
-@keyframes appear-from-left {
+@keyframes AppearFromLeft {
   0% {
     transform: translate3d(-100%, 0, 0); }
   100% {
@@ -51,7 +51,7 @@
   }
 }
 
-@keyframes flash-from-bottom {
+@keyframes FlashFromBottom {
   0% {
     opacity: 0;
     transform: translate3d(0, 100%, 0);

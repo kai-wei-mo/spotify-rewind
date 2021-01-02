@@ -1,3 +1,4 @@
+@import url("animations.css");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
@@ -18,12 +19,24 @@ h3 {
   font-size: 2em;
   margin-top: 6%;
   color: #59457a;
+
+  animation: MicDrop;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-duration: 1.2s;
+  opacity: 0;
 }
 
 h4 {
   font-family: 'Montserrat';
   line-height: 1.5em;
   color: #544d71;
+
+  animation: MicDrop;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-duration: 1.2s;
+  opacity: 0;
 }
 
 a {
@@ -39,6 +52,12 @@ a:hover {
   margin: 0px 0px;
   text-align: right;
   float: right;
+
+  animation: MicDrop;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-duration: 1.2s;
+  opacity: 0;
 }
 
 .contact {

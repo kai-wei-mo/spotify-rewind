@@ -1,3 +1,4 @@
+@import url("animations.css");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 * {
@@ -8,9 +9,17 @@
   margin: 0;
   padding: 0;
 
-  margin-left: 9vw;
+  margin-left: max(9vw, 80px);
   padding: 4vw 4vw 4vw 4vw;
   height: 100%;
+
+  animation: MicDrop;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-duration: 1.0s;
+  opacity: 0;
+
+  /*animation-delay: 0.50s;*/
 }
 
 .text-overflow {
