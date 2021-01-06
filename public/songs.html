@@ -17,7 +17,26 @@
 
     <script type="text/javascript">
       let createAndPopulatePlaylist = () => {
-        createPlaylist();
+        let description = '';
+
+        description += document.getElementsByClassName('hero-text')[0].innerHTML;
+        description += ' | ';
+
+        let spanContent = document.getElementsByClassName('active')[0].innerHTML;
+
+        if (spanContent.includes('All time')) {
+          description += 'All Time'
+        } else if (spanContent.includes('Last 6 months')) {
+          description += 'Last 6 Months'
+        } else if (spanContent.includes('Last month')){
+          description += 'Last Month'
+        } else {
+          // description will append 'undefined'.
+        }
+
+        description += ' | '
+        description += new Date();
+        createPlaylist(undefined, undefined, undefined, description);
 
         var playlistExists = setInterval(function() {
          if ((sessionStorage.getItem('playlist_id'))) {

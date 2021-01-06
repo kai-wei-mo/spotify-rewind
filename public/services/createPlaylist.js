@@ -2,7 +2,7 @@
 
 function createPlaylist(
 	playlist_name = 'New Playlist by Spotify Rewind',
-	public = false, // permissions for public playlists are not requested in this version
+	public = false,
 	collaborative = false,
 	description = ''
 ) {
