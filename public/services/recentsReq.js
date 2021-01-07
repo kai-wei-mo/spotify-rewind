@@ -157,9 +157,8 @@ function recentsRequest(limit) {
 				},
 			});
 		} else {
-			// render initial screen
-			//$('#login').show();
-			//$('#loggedin').hide();
+			alert('A change of state has occured.\nPlease log in again.');
+			window.location.href = '/';
 		}
 	}
 }

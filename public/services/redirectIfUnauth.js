@@ -4,6 +4,6 @@
  * session.
  */
 
-if (!sessionStorage.getItem("access_token")) {
-    window.location.assign('/');
+if (!sessionStorage.getItem('access_token')) {
+	window.location.assign('/');
 }

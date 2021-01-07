@@ -1,4 +1,4 @@
-// RETURNS A PLAYLIST ENDPOINT
+// returns playlist endpoint
 
 function createPlaylist(
 	playlist_name = 'New Playlist by Spotify Rewind',

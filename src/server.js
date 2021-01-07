@@ -1,5 +1,3 @@
-// basic node.js script for Authorization Code OAuth2 flow
-// authenticate contre Spotify Accounts Services
 // https://developer.spotify.com/web-api/authorization-guide/#authorization_code_flow
 
 const cookieParser = require('cookie-parser');
@@ -102,8 +100,7 @@ app.get('/callback', function (req, res) {
 
 				// use the access token to access the Spotify Web API
 				request.get(options, function (error, response, body) {
-					// uncomment during development
-					// console.log(body);
+					// console.log(body); // uncomment this during development
 				});
 
 				// we can also pass the token to the browser to make requests from there
@@ -116,7 +113,6 @@ app.get('/callback', function (req, res) {
 				);
 			} else {
 				// if user denies permissions, reprompt auth.
-				// alternative design: return to home page, do not reprompt auth (?)
 				let state = generateRandomString(16);
 				res.cookie(stateKey, state);
 
