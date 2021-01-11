@@ -4,11 +4,9 @@ This application uses the Spotify Web API to identify a user's top tracks and to
 
 Users can also create playlists with their top tracks and save them for future listening.
 
-Check it out at spotifyrewind.co!
+Check it out at [spotifyrewind.co](http://spotifyrewind.co)!
 
-<!---
-screenshot of website page(s)
--->
+![Website Preview](https://github.com/kai-wei-mo/spotify-rewind/blob/main/demo.PNG)
 
 ## Creating a Spotify App
 
