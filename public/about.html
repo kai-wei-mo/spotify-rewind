@@ -1,71 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
+
+<head>
+    <meta charset="utf-8" />
     <title>Spotify Rewind | About</title>
-    <link rel="icon" href="https://cdn.onlinewebfonts.com/svg/img_515277.png">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/about.css">
+    <link rel="icon" href="https://cdn.onlinewebfonts.com/svg/img_515277.png" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/about.css" />
 
     <!-- sidenav -->
-    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/nav.css" />
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <script src="/services/redirectIfUnauth.js"></script>
 
     <span id="nav-placeholder"></span>
     <script>
-      $(function(){
-        $("#nav-placeholder").load("nav.html");
-      });
+        $(function() {
+            $('#nav-placeholder').load('nav.html');
+        });
     </script>
 
     <script type="text/javascript">
-      var existCondition = setInterval(function() {
-       if ($('#sidenav-about').length) {
-          clearInterval(existCondition);
-          $('#sidenav-about').addClass("active-sidenav");
-       }
-     }, 30);
+        var existCondition = setInterval(function() {
+            if ($('#sidenav-about').length) {
+                clearInterval(existCondition);
+                $('#sidenav-about').addClass('active-sidenav');
+            }
+        }, 30);
     </script>
 
     <script src="/services/destroySession.js"></script>
 
     <div class="about-content">
-      <h3>What is Spotify Rewind?</h3>
-      <h4>Spotify Rewind is a simple way to track your favourite artists and songs.
-      Rediscover the music you love and create playlists based on your listening habits today!
-      </h4>
+        <h3>What is Spotify Rewind?</h3>
+        <h4>
+            Spotify Rewind is a simple way to track your favourite artists and songs. Rediscover the music you love and create playlists based on your listening habits today!
+        </h4>
 
-      <h3>Privacy</h3>
-      <h4>Your Spotify data is not sent to any extraneous server, nor do we save
-        any of your data internally.
-      </h4>
+        <h3>Privacy</h3>
+        <h4>
+            Your Spotify data is not sent to any extraneous server, nor do we save any of your data internally.
+        </h4>
 
-      <h3>How do I switch accounts?</h3>
-      <h4>Go to
-        <a target="_blank" href='http://accounts.spotify.com'>accounts.spotify.com</a>
-        and press LOG OUT.
-      </h4>
-      <h4>Then,
-        <a onclick="destroySession();" href="/">click me</a>.
-      </h4>
+        <h3>How do I switch accounts?</h3>
+        <h4>
+            Go to
+            <a target="_blank" href="http://accounts.spotify.com">accounts.spotify.com</a
+				>
+				and press LOG OUT.
+			</h4>
+			<h4>Then, <a onclick="destroySession();" href="/">click me</a>.</h4>
 
-      <div class="contact-list">
-        <br /><br /><br />
-        <a class="contact github" target="_blank" href="https://github.com/kai-wei-mo">
-          <i class="fab fa-github"></i>
-        </a>
-        <a class="contact linkedin" target="_blank" href="https://www.linkedin.com/in/kai-wei-mo/">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a class="contact email" target="_blank" href="mailto:kai.wei.mo@uwaterloo.ca?subject=Spotify%20Rewind%20%5Byour%20subject%20here%5D">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-
+        <div class="contact-list">
+            <br /><br /><br />
+            <a class="contact github" target="_blank" href="https://github.com/kai-wei-mo">
+                <i class="fab fa-github"></i>
+            </a>
+            <a class="contact linkedin" target="_blank" href="https://www.linkedin.com/in/kai-wei-mo/">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a class="contact email" target="_blank" href="mailto:kai.wei.mo@uwaterloo.ca?subject=Spotify%20Rewind%20%5Byour%20subject%20here%5D">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
     </div>
-  </body>
+</body>
+
 </html>

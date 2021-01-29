@@ -1,63 +1,66 @@
 @keyframes FadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes ScaleIn {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 @keyframes ScaleXIn {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1);
-  }
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
 }
 
 @keyframes ScaleTo {
-  0% {
-    transform: scale(1.015) translate3d(0, 0, 0); }
-  100% {
-    transform: scale(1) translate3d(0, 0, 0);
-  }
+    0% {
+        transform: scale(1.015) translate3d(0, 0, 0);
+    }
+    100% {
+        transform: scale(1) translate3d(0, 0, 0);
+    }
 }
 
 @keyframes MicDrop {
-  0% {
-    transform: translate3d(0, -4px, 0);
-    opacity: 0; }
-  100% {
-    transform: translate3d(0, 0px, 0);
-    opacity: 1;
-  }
+    0% {
+        transform: translate3d(0, -4px, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0px, 0);
+        opacity: 1;
+    }
 }
 
 @keyframes AppearFromLeft {
-  0% {
-    transform: translate3d(-100%, 0, 0); }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
+    0% {
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 @keyframes FlashFromBottom {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }

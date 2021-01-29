@@ -1,129 +1,122 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
-
 .not-sidenav {
-  padding-left: 100px;
+    padding-left: 100px;
 }
 
 .feed {
-  margin-left: auto;
-  margin-right: auto;
-  width: 800px;
-  background-color: #ffffff;
-  box-shadow: 0px 0px 8px 8px #f2f2f2;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 8px 8px #f2f2f2;
 }
 
 .banner {
-  width: 100%;
-  height: 50vh;
-  position: relative;
+    width: 100%;
+    height: 50vh;
+    position: relative;
 }
 
 .bannerimage {
-  float: left;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    float: left;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-
 
 .hero-text {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
-  font-family: 'Montserrat';
-  font-weight: 800;
-  color: #fff;
-  font-size: 50px;
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-family: 'Montserrat';
+    font-weight: 800;
+    color: #fff;
+    font-size: 50px;
 }
 
-
 a:link {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a:visited {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a:active {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .text-overflow {
-  width: 500px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .notification {
-  position: fixed;
-  z-index: 5;
-  bottom: -100%;
-  background: #fff;
-  font-family: 'Montserrat';
-  width: 800px;
-  border-top: 1.5px solid #f3f3f3;
-
-  padding: 20px;
-
-  transition: all 1s;
+    position: fixed;
+    z-index: 5;
+    bottom: -100%;
+    background: #fff;
+    font-family: 'Montserrat';
+    width: 800px;
+    border-top: 1.5px solid #f3f3f3;
+    padding: 20px;
+    transition: all 1s;
 }
 
 .notification-message {
-  display: inline-block;
+    display: inline-block;
 }
 
 .notification h4 {
-  font-weight: 800;
-  color: #59457a;
-  font-size: 1em;
+    font-weight: 800;
+    color: #59457a;
+    font-size: 1em;
 }
 
 .notification p {
-  color: #9c89b8;
+    color: #9c89b8;
 }
 
 .save-button {
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #9c89b8;
-  outline: none;
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  font-size: 1.5em;
-  padding: 10px;
-
-  -webkit-transition: background-color 200ms linear;
-  -moz-transition: background-color 200ms linear;
-  -o-transition: background-color 200ms linear;
-  -ms-transition: background-color 200ms linear;
-  transition: background-color 200ms linear;
-
-  font-weight: bold;
-  width: 200px;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #9c89b8;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.5em;
+    padding: 10px;
+    -webkit-transition: background-color 200ms linear;
+    -moz-transition: background-color 200ms linear;
+    -o-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    font-weight: bold;
+    width: 200px;
 }
 
 .save-button:hover {
-  background: #59457a;
+    background: #59457a;
 }
 
 @keyframes blink {
     0% {
-      opacity: .2;
+        opacity: 0.2;
     }
     20% {
-      opacity: 1;
+        opacity: 1;
     }
     100% {
-      opacity: .2;
+        opacity: 0.2;
     }
 }
 
@@ -135,9 +128,9 @@ a:active {
 }
 
 .saving span:nth-child(2) {
-    animation-delay: .2s;
+    animation-delay: 0.2s;
 }
 
 .saving span:nth-child(3) {
-    animation-delay: .4s;
+    animation-delay: 0.4s;
 }

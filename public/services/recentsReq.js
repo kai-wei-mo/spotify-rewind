@@ -115,14 +115,16 @@ function recentsRequest(limit) {
 		}
 
 		if (!isOverNDaysAgo(date, 6)) {
-			return `${format_two_digits(day_map[date.getDay()])} ${format_two_digits(
+			return `${day_map[date.getDay()]} ${format_two_digits(
 				date.getHours()
 			)}:${format_two_digits(date.getMinutes())}`;
 		}
 
-		return `${date.getDate()} ${month_map[date.getMonth()]} ${format_two_digits(
-			date.getHours()
-		)}:${format_two_digits(date.getMinutes())}`;
+		return `${format_two_digits(date.getDate())} ${
+			month_map[date.getMonth()]
+		} ${format_two_digits(date.getHours())}:${format_two_digits(
+			date.getMinutes()
+		)}`;
 	}
 
 	var recentsSource = document.getElementById('recents-template').innerHTML,

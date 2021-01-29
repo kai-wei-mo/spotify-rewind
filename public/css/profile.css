@@ -1,137 +1,129 @@
-@import url("animations.css");
+@import url('animations.css');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
 * {
-  font-family: 'Montserrat', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: 'Montserrat', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 }
 
 .no-scroll {
-  margin: 0;
-  padding: 0;
-
-  margin-left: max(9vw, 80px);
-  padding: 4vw 4vw 4vw 4vw;
-  height: 100%;
-
-  animation: MicDrop;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-duration: 1.0s;
-  opacity: 0;
-
-  /*animation-delay: 0.50s;*/
+    margin: 0;
+    padding: 0;
+    margin-left: max(9vw, 80px);
+    padding: 4vw 4vw 4vw 4vw;
+    height: 100%;
+    animation: MicDrop;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    opacity: 0;
+    /*animation-delay: 0.50s;*/
 }
 
 .text-overflow {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 500px;
 }
 
 #user-profile {
-  display: flex;
+    display: flex;
 }
 
 .left {
-  width: 210px;
+    width: 210px;
 }
 
 .profile-pic {
-  width: inherit;
+    width: inherit;
 }
 
 .link {
-  font-size: 1.5em;
-  color: #2196f3;
-  margin-left: 10px;
+    font-size: 1.5em;
+    color: #2196f3;
+    margin-left: 10px;
 }
 
 a:link {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a:visited {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a:active {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .display_name {
-  font-size: 2em;
-  color: #2196f3;
-  font-weight: bold;
+    font-size: 2em;
+    color: #2196f3;
+    font-weight: bold;
 }
 
 .about-head {
-  margin-top: 30px;
-  margin-bottom: 10px;
-  color: #555555;
-  font-weight: 400;
-  font-size: 1.25em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #555555;
+    font-weight: 400;
+    font-size: 1.25em;
 }
 
 .refresh {
-  background: #9c89b8;
-  border: none;
-  outline: none;
-  color: #fff;
-  font-size: 1.0em;
-
-  padding-top: 1px;
-  padding-bottom: 1px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 8px;
-
-  margin-left: 8px;
-
-  -webkit-transition: background-color 160ms linear;
-  -moz-transition: background-color 160ms linear;
-  -o-transition: background-color 160ms linear;
-  -ms-transition: background-color 160ms linear;
-  transition: background-color 160ms linear;
-
+    background: #9c89b8;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    margin-left: 8px;
+    -webkit-transition: background-color 160ms linear;
+    -moz-transition: background-color 160ms linear;
+    -o-transition: background-color 160ms linear;
+    -ms-transition: background-color 160ms linear;
+    transition: background-color 160ms linear;
 }
 
 .refresh:hover {
-  background: #59457a;
+    background: #59457a;
 }
 
 .about-table {
-  border-collapse: separate;
-  border-spacing: 0px 12px;
+    border-collapse: separate;
+    border-spacing: 0px 12px;
 }
 
 .td-left {
-  padding: 0 36px 0 0;
-  margin: 0;
-  color: #2196f3;
+    padding: 0 36px 0 0;
+    margin: 0;
+    color: #2196f3;
 }
 
 .country-flag {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .right {
-  flex: 1;
-  margin-left: 3vw;
+    flex: 1;
+    margin-left: 3vw;
 }
 
 #recents {
-  overflow-y: scroll;
-  position: relative;
-  bottom: 0;
-  height: 400px;
+    overflow-y: scroll;
+    position: relative;
+    bottom: 0;
+    height: 400px;
 }
 
 .blank-recent {
-  height: 100px;
+    height: 100px;
 }

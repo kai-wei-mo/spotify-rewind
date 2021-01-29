@@ -1,84 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
+
+<head>
+    <meta charset="utf-8" />
     <title>Spotify Rewind | Top Artists</title>
-    <link rel="icon" href="https://cdn.onlinewebfonts.com/svg/img_515277.png">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/artists_and_tracks.css">
-    <link rel="stylesheet" href="/css/time_range.css">
+    <link rel="icon" href="https://cdn.onlinewebfonts.com/svg/img_515277.png" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/artists_and_tracks.css" />
+    <link rel="stylesheet" href="/css/time_range.css" />
 
     <!-- sidenav -->
-    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/nav.css" />
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <script src="/services/redirectIfUnauth.js"></script>
 
     <span id="nav-placeholder"></span>
     <script>
-      $(function(){
-        $("#nav-placeholder").load("nav.html");
-      });
+        $(function() {
+            $('#nav-placeholder').load('nav.html');
+        });
     </script>
 
     <script type="text/javascript">
-      var existCondition = setInterval(function() {
-       if ($('#sidenav-artists').length) {
-          clearInterval(existCondition);
-          $('#sidenav-artists').addClass("active-sidenav");
-       }
-     }, 30);
+        var existCondition = setInterval(function() {
+            if ($('#sidenav-artists').length) {
+                clearInterval(existCondition);
+                $('#sidenav-artists').addClass('active-sidenav');
+            }
+        }, 30);
     </script>
 
     <div class="not-sidenav">
-      <div class="feed">
-        <div class="banner">
-          <img class="bannerimage" src="../assets/microphone_teodorescuuu.png" alt="banner">
-          <span class="hero-text">Top Artists</span>
+        <div class="feed">
+            <div class="banner">
+                <img class="bannerimage" src="../assets/microphone_teodorescuuu.png" alt="banner" />
+                <span class="hero-text">Top Artists</span>
+            </div>
+            <div id="time_range_placeholder"></div>
+
+            <script>
+                $(function() {
+                    $('#time_range_placeholder').load('time_range.html');
+                });
+            </script>
+
+            <div id="main"></div>
+            <!-- templated with apiReq.js -->
         </div>
-        <div id="time_range_placeholder"></div>
-
-        <script>
-          $(function(){
-            $("#time_range_placeholder").load("time_range.html");
-          });
-        </script>
-
-        <div id="main"></div> <!-- templated with apiReq.js -->
-      </div>
     </div>
 
     <script id="main-template" type="text/x-handlebars-template">
-      <section class="content">
-        {{#items}}
-        <div class="row-container">
-          <a class="artist" href={{uri}}>
-            <span class="ranking">{{ranking}}</span>
-            <span class="artist-image-container">
-              <img class="artist-image" src={{images.0.url}} alt={{name}}>
-            </span>
-            <span class="artist-text">
-              <p class="artist-name">{{name}}</p>
-              <p class="artist-genres">{{genres}}</p> <!-- up to 3 genres -->
-            </span>
-          </a>
-        </div>
-        {{/items}}
-      </section>
+        <section class='content'>
+            {{#items}}
+            <div class='row-container'>
+                <a class='artist' href={{uri}}>
+                    <span class='ranking'>
+								{{ranking}}
+							</span>
+                    <span class='artist-image-container'>
+								<img class='artist-image' src={{images.0.url}} alt={{name}} />
+							</span>
+                    <span class='artist-text'>
+								<p class='artist-name'>
+									{{name}}
+								</p>
+								<p class='artist-genres'>
+									{{genres}}
+								</p>
+								<!-- up to 3 genres -->
+							</span>
+                </a>
+            </div>
+            {{/items}}
+        </section>
     </script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="services/apiReq.js">
-      // This provides the function spotifyRequest().
+        // This provides the function spotifyRequest().
     </script>
 
     <script type="text/javascript">
-      // Upon loading, show all time top 50 artists.
-      spotifyRequest('artists', 'long_term', 50, 0);
+        // Upon loading, show all time top 50 artists.
+        spotifyRequest('artists', 'long_term', 50, 0);
     </script>
-  </body>
+</body>
+
 </html>

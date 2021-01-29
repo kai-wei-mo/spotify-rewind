@@ -1,30 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
-
 .time {
-  font-family: 'Montserrat', sans-serif;
-
-  font-size: 1.3em;
-  font-weight: 800;
-  color: #9c89b8;
-  border: none;
-  outline: none;
-  padding: 30px 6px;
-  margin-left: 20px;
-  margin-right: 20px;
-
-  cursor: pointer;
-
-  background: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    font-weight: 800;
+    color: #9c89b8;
+    border: none;
+    outline: none;
+    padding: 30px 6px;
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    background: none;
 }
 
 .time:hover {
-  color: #59457a;
+    color: #59457a;
 }
 
 .active {
-  color: #59457a;
+    color: #59457a;
 }
 
 .active span {
-  border-bottom: 4px solid #59457a;
+    border-bottom: 4px solid #59457a;
 }

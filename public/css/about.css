@@ -1,102 +1,97 @@
-@import url("animations.css");
+@import url('animations.css');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-
 .about-content {
-  padding-left: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 800px;
-
-  margin-top: auto;
-  margin-bottom: auto;
-  height: 100%;
+    padding-left: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
 }
 
 h3 {
-  font-family: 'Montserrat';
-  font-weight: 800;
-  font-size: 2em;
-  margin-top: 6%;
-  color: #59457a;
-
-  animation: MicDrop;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-duration: 1.2s;
-  opacity: 0;
+    font-family: 'Montserrat';
+    font-weight: 800;
+    font-size: 2em;
+    margin-top: 6%;
+    color: #59457a;
+    animation: MicDrop;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-duration: 1.2s;
+    opacity: 0;
 }
 
 h4 {
-  font-family: 'Montserrat';
-  line-height: 1.5em;
-  color: #544d71;
-
-  animation: MicDrop;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-duration: 1.2s;
-  opacity: 0;
+    font-family: 'Montserrat';
+    line-height: 1.5em;
+    color: #544d71;
+    animation: MicDrop;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-duration: 1.2s;
+    opacity: 0;
 }
 
 a {
-  color: #2196f3;
+    color: #2196f3;
 }
 
 a:hover {
-  text-decoration: underline;
-  color: #1976bf;
+    text-decoration: underline;
+    color: #1976bf;
 }
 
 .contact-list {
-  margin: 0px 0px;
-  text-align: right;
-  float: right;
-
-  animation: MicDrop;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-duration: 1.2s;
-  opacity: 0;
+    margin: 0px 0px;
+    text-align: right;
+    float: right;
+    animation: MicDrop;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-duration: 1.2s;
+    opacity: 0;
 }
 
 .contact {
-  text-align: center;
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  padding: 0px;
-  text-decoration: none;
-  text-align: center;
-  color: white;
-  font-size: 25px;
-  font-weight: normal;
-  line-height: 2em;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  transition: 0.3s;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    transition: 0.3s;
 }
 
 .contact:hover {
-  opacity: 0.9;
-  color: white;
+    opacity: 0.9;
+    color: white;
 }
 
 .contact:visited {
-  color: white;
+    color: white;
 }
 
 .github {
-  background: #59457a;
+    background: #59457a;
 }
 
 .linkedin {
-  background: #59457a;
+    background: #59457a;
 }
 
 .email {
-  background: #59457a;
+    background: #59457a;
 }
