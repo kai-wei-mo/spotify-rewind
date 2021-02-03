@@ -181,10 +181,11 @@ img {
     margin-bottom: var(--mb-2);
     font-size: 2.718rem;
     color: var(--second-color);
+    transition: 0.35s;
 }
 
 .home__social-icon:hover {
-    color: var(--first-color);
+    color: var(--tertiary-color);
 }
 
 .home__img {
@@ -204,9 +205,11 @@ img {
     padding: 0.75rem 2.5rem;
     font-weight: var(--font-semi);
     border-radius: 0.5rem;
+    transition: 0.35s;
 }
 
 .button:hover {
+    background-color: var(--first-color);
     box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
 }
 
