@@ -1,0 +1,25 @@
+{
+  "name": "spotify-rewind",
+  "version": "1.0.0",
+  "description": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kai-wei-mo/spotify-rewind.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kai-wei-mo/spotify-rewind/issues"
+  },
+  "homepage": "https://github.com/kai-wei-mo/spotify-rewind#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
