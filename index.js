@@ -64,7 +64,7 @@ app.get('/callback', (req, res) => {
   })
     .then(response => {
       if (response.status === 200) {
-        const { access_token, refresh_token } = response.data;
+        const { access_token, refresh_token, expires_in } = response.data;
 
         // redirect to react app
         // pass along tokens in query params
@@ -72,11 +72,12 @@ app.get('/callback', (req, res) => {
         const queryParams = querystring.stringify({
           access_token,
           refresh_token,
+          expires_in,
         });
 
         res.redirect(`http://localhost:3000/?${queryParams}`);
       } else {
-        res.redirect('/');
+        res.redirect('/?error=invalid_token');
       }
     })
     .catch(error => {

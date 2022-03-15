@@ -6,3 +6,6 @@
 
 ## Setup
 - nvm install
+- npm install
+- npm postinstall
+- npm start

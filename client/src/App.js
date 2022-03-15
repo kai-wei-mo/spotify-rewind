@@ -1,37 +1,22 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { accessToken, logout } from './spotify';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [token, setToken] = useState(null);
+
   useEffect(() => {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const accessToken = urlParams.get('access_token');
-    const refreshToken = urlParams.get('refresh_token');
-
-    if (accessToken) {
-      localStorage.setItem('access_token', accessToken);
-    }
-
-    if (refreshToken) {
-      localStorage.setItem('refresh_token', refreshToken);
-    }
+    setToken(accessToken);
   }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="http://localhost:8888/login"
-        >
-          Log in to Spotify
-        </a>
+        {!token && <a className="App-link" href="http://localhost:8888/login">Login</a>}
+        {token && (<> <p>Logged in</p> <button onClick={logout}>Log out</button> </>)}
       </header>
-    </div>
+    </div >
   );
 }
 
