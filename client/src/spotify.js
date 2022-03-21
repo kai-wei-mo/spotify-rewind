@@ -1,5 +1,19 @@
 import axios from 'axios';
 
+const LOCALSTORAGE_KEYS = {
+  accessToken: 'spotify_access_token',
+  refreshToken: 'spotify_refresh_token',
+  expireTime: 'spotify_token_expire_time',
+  timestamp: 'spotify_token_timestamp',
+}
+
+const LOCALSTORAGE_VALUES = {
+  accessToken: window.localStorage.getItem(LOCALSTORAGE_KEYS.accessToken),
+  refreshToken: window.localStorage.getItem(LOCALSTORAGE_KEYS.refreshToken),
+  expireTime: window.localStorage.getItem(LOCALSTORAGE_KEYS.expireTime),
+  timestamp: window.localStorage.getItem(LOCALSTORAGE_KEYS.timestamp),
+};
+
 /**
  * Use the refresh token in localStorage to hit the /refresh_token endpoint
  * in our Node app, then update values in localStorage with data from response.
@@ -44,19 +58,6 @@ const logout = () => {
   window.location = window.location.origin;
 };
 
-const LOCALSTORAGE_KEYS = {
-  accessToken: 'spotify_access_token',
-  refreshToken: 'spotify_refresh_token',
-  expireTime: 'spotify_token_expire_time',
-  timestamp: 'spotify_token_timestamp',
-}
-
-const LOCALSTORAGE_VALUES = {
-  accessToken: window.localStorage.getItem(LOCALSTORAGE_KEYS.accessToken),
-  refreshToken: window.localStorage.getItem(LOCALSTORAGE_KEYS.refreshToken),
-  expireTime: window.localStorage.getItem(LOCALSTORAGE_KEYS.expireTime),
-  timestamp: window.localStorage.getItem(LOCALSTORAGE_KEYS.timestamp),
-};
 
 /**
  * Checks if the amount of time that has elapsed between the timestamp in localStorage
@@ -110,8 +111,26 @@ const getAccessToken = () => {
   return false;
 };
 
+/**
+ * Get Current User's Profile
+ * https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-current-users-profile
+ * @returns {Promise}
+ */
+const getCurrentUserProfile = () => axios.get('/me');
+
+/**
+ * Get a List of Current User's Playlists
+ * https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-a-list-of-current-users-playlists
+ * @returns {Promise}
+ */
+const getCurrentUserPlaylists = (limit = 20) => {
+  return axios.get(`/me/playlists?limit=${limit}`);
+};
 
 export { logout };
+export { getCurrentUserProfile };
+export { getCurrentUserPlaylists };
+
 export const accessToken = getAccessToken();
 
 /**
@@ -121,19 +140,3 @@ export const accessToken = getAccessToken();
 axios.defaults.baseURL = 'https://api.spotify.com/v1';
 axios.defaults.headers['Authorization'] = `Bearer ${accessToken}`;
 axios.defaults.headers['Content-Type'] = 'application/json';
-
-/**
- * Get Current User's Profile
- * https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-current-users-profile
- * @returns {Promise}
- */
-export const getCurrentUserProfile = () => axios.get('/me');
-
-/**
- * Get a List of Current User's Playlists
- * https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-a-list-of-current-users-playlists
- * @returns {Promise}
- */
-export const getCurrentUserPlaylists = (limit = 20) => {
-  return axios.get(`/me/playlists?limit=${limit}`);
-};
