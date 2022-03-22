@@ -49,7 +49,7 @@ const refreshToken = async () => {
  * Clear out all localStorage items we've set and reload the page
  * @returns {void}
  */
-const logout = () => {
+export const logout = () => {
   // Clear all localStorage items
   for (const property in LOCALSTORAGE_KEYS) {
     window.localStorage.removeItem(LOCALSTORAGE_KEYS[property]);
@@ -116,14 +116,14 @@ const getAccessToken = () => {
  * https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-current-users-profile
  * @returns {Promise}
  */
-const getCurrentUserProfile = () => axios.get('/me');
+export const getCurrentUserProfile = () => axios.get('/me');
 
 /**
  * Get a List of Current User's Playlists
  * https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-a-list-of-current-users-playlists
  * @returns {Promise}
  */
-const getCurrentUserPlaylists = (limit = 20) => {
+export const getCurrentUserPlaylists = (limit = 20) => {
   return axios.get(`/me/playlists?limit=${limit}`);
 };
 
@@ -136,10 +136,6 @@ const getCurrentUserPlaylists = (limit = 20) => {
 export const getTopArtists = (time_range = 'short_term') => {
   return axios.get(`/me/top/artists?time_range=${time_range}`);
 };
-
-export { logout };
-export { getCurrentUserProfile };
-export { getCurrentUserPlaylists };
 
 export const accessToken = getAccessToken();
 
