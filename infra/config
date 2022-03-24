@@ -1,0 +1,4 @@
+Host spotify-rewind
+  HostName ec2-3-90-193-157.compute-1.amazonaws.com
+  IdentityFile ~/.ssh/spotify-rewind-kp.pem
+  User ubuntu
