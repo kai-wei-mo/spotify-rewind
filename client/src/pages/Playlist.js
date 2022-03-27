@@ -13,6 +13,9 @@ const Playlist = () => {
   const [tracks, setTracks] = useState(null);
   const [audioFeatures, setAudioFeatures] = useState(null);
 
+  const [sortValue, setSortValue] = useState('');
+  const sortOptions = ['danceability', 'tempo', 'energy'];
+
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await getPlaylistById(id);
@@ -80,6 +83,24 @@ const Playlist = () => {
     });
   }, [tracks, audioFeatures]);
 
+  // Sort tracks by audio feature to be used in template
+  const sortedTracks = useMemo(() => {
+    if (!tracksWithAudioFeatures) {
+      return null;
+    }
+
+    return [...tracksWithAudioFeatures].sort((a, b) => {
+      const aFeatures = a['audio_features'];
+      const bFeatures = b['audio_features'];
+
+      if (!aFeatures || !bFeatures) {
+        return false;
+      }
+
+      return bFeatures[sortValue] - aFeatures[sortValue];
+    });
+  }, [sortValue, tracksWithAudioFeatures]);
+
   return (
     <>
       {playlist && (
@@ -104,8 +125,24 @@ const Playlist = () => {
 
           <main>
             <SectionWrapper title="Playlist" breadcrumb={true}>
-              {tracksForTracklist && (
-                <TrackList tracks={tracksForTracklist} />
+              <div>
+                <label className="sr-only" htmlFor="order-select">Sort tracks</label>
+                <select
+                  name="track-order"
+                  id="order-select"
+                  onChange={e => setSortValue(e.target.value)}
+                >
+                  <option value="">Sort tracks</option>
+                  {sortOptions.map((option, i) => (
+                    <option value={option} key={i}>
+                      {`${option.charAt(0).toUpperCase()}${option.slice(1)}`}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {sortedTracks && (
+                <TrackList tracks={sortedTracks} />
               )}
             </SectionWrapper>
           </main>
