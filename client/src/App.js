@@ -12,7 +12,7 @@ import { catchErrors } from './utils';
 import styled from 'styled-components/macro';
 import { GlobalStyle } from './styles';
 
-import { Login, Profile, TopArtists, TopTracks, Playlists } from './pages';
+import { Login, Profile, TopArtists, TopTracks, Playlists, Playlist } from './pages';
 
 const StyledLoginButton = styled.a`
   background-color: var(--green);
@@ -84,7 +84,7 @@ function App() {
                 </Route>
                 <Route path="/top-tracks" element={<TopTracks />}>
                 </Route>
-                <Route path="/playlists/:id" element={<h1>Playlist ID</h1>}>
+                <Route path="/playlists/:id" element={<Playlist />}>
                 </Route>
                 <Route path="/playlists" element={<Playlists />}>
                 </Route>
