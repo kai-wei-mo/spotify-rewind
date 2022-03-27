@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { catchErrors } from '../utils'
-import { getPlaylistById } from '../spotify';
+import { getPlaylistById, getAudioFeaturesForTracks } from '../spotify';
 import { TrackList, SectionWrapper } from '../components';
 import { StyledHeader } from '../styles';
 
@@ -11,6 +11,7 @@ const Playlist = () => {
   const [playlist, setPlaylist] = useState(null);
   const [tracksData, setTracksData] = useState(null);
   const [tracks, setTracks] = useState(null);
+  const [audioFeatures, setAudioFeatures] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,9 +42,43 @@ const Playlist = () => {
       ...tracks ? tracks : [],
       ...tracksData.items
     ]));
-
     catchErrors(fetchMoreData());
+
+    // Also update the audioFeatures state variable using the track IDs
+    const fetchAudioFeatures = async () => {
+      const ids = tracksData.items.map(({ track }) => track.id).join(',');
+      const { data } = await getAudioFeaturesForTracks(ids);
+      setAudioFeatures(audioFeatures => ([
+        ...audioFeatures ? audioFeatures : [],
+        ...data['audio_features']
+      ]));
+    };
+    catchErrors(fetchAudioFeatures());
   }, [tracksData]);
+
+  // Map over tracks and add audio_features property to each track
+  const tracksWithAudioFeatures = useMemo(() => {
+    if (!tracks || !audioFeatures) {
+      return null;
+    }
+
+    return tracks.map(({ track }) => {
+      const trackToAdd = track;
+
+      if (!track.audio_features) {
+        const audioFeaturesObj = audioFeatures.find(item => {
+          if (!item || !track) {
+            return null;
+          }
+          return item.id === track.id;
+        });
+
+        trackToAdd['audio_features'] = audioFeaturesObj;
+      }
+
+      return trackToAdd;
+    });
+  }, [tracks, audioFeatures]);
 
   const tracksForTracklist = useMemo(() => {
     if (!tracks) {
@@ -51,6 +86,8 @@ const Playlist = () => {
     }
     return tracks.map(({ track }) => track);
   }, [tracks]);
+
+  console.log(audioFeatures);
 
   return (
     <>
