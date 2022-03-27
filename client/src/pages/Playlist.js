@@ -80,15 +80,6 @@ const Playlist = () => {
     });
   }, [tracks, audioFeatures]);
 
-  const tracksForTracklist = useMemo(() => {
-    if (!tracks) {
-      return;
-    }
-    return tracks.map(({ track }) => track);
-  }, [tracks]);
-
-  console.log(audioFeatures);
-
   return (
     <>
       {playlist && (
