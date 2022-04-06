@@ -105,6 +105,8 @@ const getAccessToken = () => {
     }
 
     window.localStorage.setItem(LOCALSTORAGE_KEYS.timestamp, Date.now());
+    window.history.replaceState(null, "Spotify Rewind", "/")
+
     return queryParams[LOCALSTORAGE_KEYS.accessToken];
   }
 
