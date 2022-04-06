@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 
-const BACKEND_URI = process.env.DEPLOYMENT === 'PROD' ? process.env.REACT_APP_BACKEND_URI_PROD : process.env.REACT_APP_BACKEND_URI_DEV;
+const BACKEND_URI = process.env.REACT_APP_DEPLOYMENT === 'PROD' ? process.env.REACT_APP_BACKEND_URI_PROD : process.env.REACT_APP_BACKEND_URI_DEV;
 
 const StyledLoginContainer = styled.main`
   display: flex;

@@ -2,6 +2,7 @@
 
 # Debian / Ubuntu systems
 apt update -y
+apt-get update -y
 apt install wget curl unzip -y
 
 # install Terraform v1.1.7
@@ -17,6 +18,9 @@ unzip awscliv2.zip
 ./aws/install
 rm -rf aws
 rm awscliv2.zip
+
+# install docker
+apt install docker.io -y
 
 # install jq
 apt-get install jq

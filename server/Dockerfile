@@ -1,9 +1,14 @@
 FROM node:alpine
 
-WORKDIR /backend
+WORKDIR /app
 
-COPY ** ./
-
+COPY package.json .
 RUN npm install
 
-CMD ["node", "index.js"]
+COPY . ./
+
+CMD ["npm", "run", "server"]
+
+# docker build -t kaiweimo/spotify-rewind-backend .
+# docker push kaiweimo/spotify-rewind-backend
+# docker run -d -p 8888:8888 --pull always kaiweimo/spotify-rewind-backend
