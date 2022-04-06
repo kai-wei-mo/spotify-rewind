@@ -4,10 +4,8 @@
   "description": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "server": "nodemon index.js",
-    "client": "cd client && npm start",
-    "postinstall": "cd client && npm install"
+    "server": "node index.js",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -22,9 +20,10 @@
   "homepage": "https://github.com/kai-wei-mo/spotify-rewind#readme",
   "dependencies": {
     "axios": "^0.26.1",
-    "concurrently": "^7.1.0",
     "dotenv": "^16.0.0",
-    "express": "^4.17.3",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.15"
   }
 }
