@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro';
 
+const BACKEND_URI = process.env.DEPLOYMENT === 'PROD' ? process.env.REACT_APP_BACKEND_URI_PROD : process.env.REACT_APP_BACKEND_URI_DEV;
+
 const StyledLoginContainer = styled.main`
   display: flex;
   flex-direction: column;
@@ -26,7 +28,7 @@ const StyledLoginButton = styled.a`
 
 const Login = () => (
   <StyledLoginContainer>
-    <StyledLoginButton href="http://localhost:8888/login">
+    <StyledLoginButton href={`${BACKEND_URI}/login`}>
       Log in to Spotify
     </StyledLoginButton>
   </StyledLoginContainer>

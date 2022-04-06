@@ -9,7 +9,8 @@ const port = process.env.PORT || 8888;
 
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
-const REDIRECT_URI = process.env.REDIRECT_URI;
+const REDIRECT_URI = process.env.DEPLOYMENT === 'PROD' ? process.env.REDIRECT_URI_PROD : process.env.REDIRECT_URI_DEV;
+const FRONTEND_URI = process.env.DEPLOYMENT === 'PROD' ? process.env.FRONTEND_URI_PROD : process.env.FRONTEND_URI_DEV;
 
 const generateRandomString = (length) => {
   let text = '';
@@ -79,7 +80,7 @@ app.get('/callback', (req, res) => {
           expires_in,
         });
 
-        res.redirect(`http://localhost:3000/?${queryParams}`);
+        res.redirect(`${FRONTEND_URI}/?${queryParams}`);
       } else {
         res.redirect('/?error=invalid_token');
       }
